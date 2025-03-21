@@ -1,0 +1,35 @@
+{
+  "name": "cse-341-project2",
+  "version": "1.0.0",
+  "description": "CSE Project 2",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write .",
+    "lint": "eslint *.js",
+    "lint:fix": "eslint *.js --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luismarymo/cse-341-project2.git"
+  },
+  "author": "Luismary Marino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luismarymo/cse-341-project2/issues"
+  },
+  "homepage": "https://github.com/luismarymo/cse-341-project2#readme",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongodb": "^6.15.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.22.0",
+    "eslint": "^9.22.0",
+    "globals": "^16.0.0",
+    "prettier": "3.5.3"
+  }
+}
