@@ -1,4 +1,7 @@
 // LOCALHOST
+
+// Planets
+
 ### Get all planets
 GET http://localhost:4000/planets
 
@@ -23,6 +26,29 @@ content-type: application/json
     "surfaceTempMeanC": -63
 }
 
+### Update a planet
+PUT http://localhost:4000/planets/621ff30d2a3e781873fcb663 HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Saturn",
+  "orderFromSun": 6,
+  "hasRings": false,
+  "mainAtmosphere": [
+    "H2",
+    "He",
+    "CH4"
+  ],
+  "surfaceTempMinC": null,
+  "surfaceTempMaxC": null,
+  "surfaceTempMeanC": -139.15
+}
+
+### Delete a planet
+DELETE http://localhost:4000/planets/67dd47561e2bcaae49df5be0 HTTP/1.1
+
+// Stars
+
 ### Get all stars
 GET http://localhost:4000/stars
 
@@ -39,3 +65,99 @@ content-type: application/json
   "designation": "Also some",
   "description": ""
 }
+
+### Update a star
+PUT http://localhost:4000/stars/67dd023b5b40329e2004a79a HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Ain",
+  "constellation": "Taurus",
+  "designation": "ε Tauri Aa1",
+  "description": "I have updated the description"
+}
+
+### Delete a star
+DELETE http://localhost:4000/stars/67dd2bc53794962e0c5f2043 HTTP/1.1
+
+// RENDER
+
+// Planets
+
+### Get all planets
+GET https://astronomical-bodies-api.onrender.com/planets
+
+### Get planet by id
+GET https://astronomical-bodies-api.onrender.com/planets/621ff30d2a3e781873fcb662
+
+### Create a planet
+POST https://astronomical-bodies-api.onrender.com/planets HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Genesis",
+  "orderFromSun": 50,
+  "hasRings": false,
+  "mainAtmosphere": [
+    "N",
+    "O2",
+    "Ar"
+  ],
+    "surfaceTempMinC": -143,
+    "surfaceTempMaxC": 35,
+    "surfaceTempMeanC": -63
+}
+
+### Update a planet
+PUT https://astronomical-bodies-api.onrender.com/planets/621ff30d2a3e781873fcb663 HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Saturn",
+  "orderFromSun": 6,
+  "hasRings": false,
+  "mainAtmosphere": [
+    "H2",
+    "He",
+    "CH4"
+  ],
+  "surfaceTempMinC": null,
+  "surfaceTempMaxC": null,
+  "surfaceTempMeanC": -139.15
+}
+
+### Delete a planet
+DELETE https://astronomical-bodies-api.onrender.com/planets/67dd3ef18c7fa1fb4d426941 HTTP/1.1
+
+// Stars
+
+### Get all stars
+GET https://astronomical-bodies-api.onrender.com/stars
+
+### Get star by id
+GET https://astronomical-bodies-api.onrender.com/stars/67dd023b5b40329e2004a792
+
+### Create a star
+POST https://astronomical-bodies-api.onrender.com/stars HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Big Star",
+  "constellation": "Some",
+  "designation": "Also some",
+  "description": ""
+}
+
+### Update a star
+PUT https://astronomical-bodies-api.onrender.com/stars/67dd023b5b40329e2004a79a HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Ain",
+  "constellation": "Taurus",
+  "designation": "ε Tauri Aa1",
+  "description": "I have updated the description"
+}
+
+### Delete a star
+DELETE https://astronomical-bodies-api.onrender.com/stars/67dd2bc53794962e0c5f2043 HTTP/1.1

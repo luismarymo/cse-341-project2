@@ -8,4 +8,8 @@ router.get("/:id", planetsController.getSingle);
 
 router.post("/", planetsController.createPlanet);
 
+router.put("/:id", planetsController.updatePlanet);
+
+router.delete("/:id", planetsController.deletePlanet);
+
 module.exports = router;
