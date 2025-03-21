@@ -1,0 +1,43 @@
+// LOCALHOST
+### Get all planets
+GET http://localhost:4000/planets
+
+### Get planet by id
+GET http://localhost:4000/planets/621ff30d2a3e781873fcb662
+
+### Create a planet
+POST http://localhost:4000/planets HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Genesis",
+  "orderFromSun": 50,
+  "hasRings": false,
+  "mainAtmosphere": [
+    "N",
+    "O2",
+    "Ar"
+  ],
+  "surfaceTemperatureC": {
+    "min": -20.2,
+    "max": 57.7,
+    "mean": 16
+  }
+}
+
+### Get all stars
+GET http://localhost:4000/stars
+
+### Get star by id
+GET http://localhost:4000/stars/67dd023b5b40329e2004a792
+
+### Create a star
+POST http://localhost:4000/stars HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Big Star",
+  "constellation": "Some",
+  "designation": "Also some",
+  "description": ""
+}
