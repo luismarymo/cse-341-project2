@@ -18,11 +18,9 @@ content-type: application/json
     "O2",
     "Ar"
   ],
-  "surfaceTemperatureC": {
-    "min": -20.2,
-    "max": 57.7,
-    "mean": 16
-  }
+    "surfaceTempMinC": -143,
+    "surfaceTempMaxC": 35,
+    "surfaceTempMeanC": -63
 }
 
 ### Get all stars

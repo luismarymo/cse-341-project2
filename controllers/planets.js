@@ -31,11 +31,9 @@ const createPlanet = async (req, res) => {
     orderFromSun: req.body.orderFromSun,
     hasRings: req.body.hasRings,
     mainAtmosphere: req.body.mainAtmosphere,
-    surfaceTemperatureC: {
-      min: req.body.surfaceTemperatureC.min,
-      max: req.body.surfaceTemperatureC.max,
-      mean: req.body.surfaceTemperatureC.mean,
-    },
+    surfaceTempMinC: req.body.surfaceTempMinC,
+    surfaceTempMaxC: req.body.surfaceTempMaxC,
+    surfaceTempMeanC: req.body.surfaceTempMeanC,
   };
   const response = await mongodb
     .getDatabase()

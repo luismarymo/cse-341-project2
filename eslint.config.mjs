@@ -1,6 +1,7 @@
 import { defineConfig } from "eslint/config";
 import globals from "globals";
 import js from "@eslint/js";
+import stylisticJs from "@stylistic/eslint-plugin-js";
 
 export default defineConfig([
   { files: ["**/*.{js,mjs,cjs}"] },
@@ -14,5 +15,14 @@ export default defineConfig([
     plugins: { js },
     extends: ["js/recommended"],
   },
-  { rules: { semi: ["error", "always"] } },
+  {
+    files: ["**/*.{js,mjs,cjs}"],
+    plugins: { "@stylistic/js": stylisticJs },
+  },
+  {
+    rules: {
+      "@stylistic/js/semi": ["error", "always"],
+      "@stylistic/js/quotes": ["error", "double"],
+    },
+  },
 ]);
