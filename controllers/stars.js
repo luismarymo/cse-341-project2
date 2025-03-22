@@ -16,6 +16,9 @@ const getAll = async (req, res) => {
 
 const getSingle = async (req, res) => {
   //swagger.tags=["Stars"]
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json("Must use a valid star id to find a star");
+  }
   try {
     const starId = new ObjectId(req.params.id);
     const result = await mongodb
@@ -56,6 +59,9 @@ const createStar = async (req, res) => {
 
 const updateStar = async (req, res) => {
   //swagger.tags=["Star"]
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json("Must use a valid star id to update a star");
+  }
   const starId = new ObjectId(req.params.id);
   const star = {
     name: req.body.name,
@@ -79,6 +85,9 @@ const updateStar = async (req, res) => {
 
 const deleteStar = async (req, res) => {
   //swagger.tags=["Stars"]
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json("Must use a valid star id to delete a star");
+  }
   const starId = new ObjectId(req.params.id);
   const response = await mongodb
     .getDatabase()

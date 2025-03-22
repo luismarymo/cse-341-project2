@@ -28,7 +28,8 @@
     "express-validator": "^7.2.1",
     "mongodb": "^6.15.0",
     "swagger-autogen": "^2.23.7",
-    "swagger-ui-express": "^5.0.1"
+    "swagger-ui-express": "^5.0.1",
+    "validatorjs": "^3.22.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",

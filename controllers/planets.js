@@ -20,6 +20,9 @@ const getAll = async (req, res) => {
 
 const getSingle = async (req, res) => {
   //swagger.tags=["Planets"]
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json("Must use a valid planet id to find a planet");
+  }
   try {
     const planetId = new ObjectId(req.params.id);
     const result = await mongodb
@@ -63,6 +66,9 @@ const createPlanet = async (req, res) => {
 
 const updatePlanet = async (req, res) => {
   //swagger.tags=["Planets"]
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json("Must use a valid planet id to update a planet");
+  }
   const planetId = new ObjectId(req.params.id);
   const planet = {
     name: req.body.name,
@@ -89,6 +95,9 @@ const updatePlanet = async (req, res) => {
 
 const deletePlanet = async (req, res) => {
   //swagger.tags=["Planets"]
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json("Must use a valid planet id to delete a planet");
+  }
   const planetId = new ObjectId(req.params.id);
   const response = await mongodb
     .getDatabase()
