@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
+const { isAuthenticated } = require("../middleware/authenticate");
+
 const planetsController = require("../controllers/planets");
 const validation = require("../middleware/validate");
 
@@ -9,8 +11,8 @@ router.get("/:id", planetsController.getSingle);
 
 router.post("/", validation.savePlanet, planetsController.createPlanet);
 
-router.put("/:id", validation.savePlanet, planetsController.updatePlanet);
+router.put("/:id", isAuthenticated, validation.savePlanet, planetsController.updatePlanet);
 
-router.delete("/:id", planetsController.deletePlanet);
+router.delete("/:id", isAuthenticated, planetsController.deletePlanet);
 
 module.exports = router;
